@@ -6,6 +6,7 @@
     "experimentalDecorators": true,
     "strict": true,
     "strictPropertyInitialization": false,
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "outDir": "./dist/",
     "paths":{

@@ -1,0 +1,14 @@
+<div class="todo">
+  <input
+    type="checkbox"
+    class="todo-done"
+    :checked="done"
+    @click="$emit('toggle')"
+  />
+  <div class="todo-text">{{ txt }}</div>
+  <div class="todo-delete">
+    <button class="close-btn" @click="$emit('delete')">
+      X
+    </button>
+  </div>
+</div>

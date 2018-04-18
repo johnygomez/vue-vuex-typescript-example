@@ -13,17 +13,14 @@ module.exports = {
   module: {
     rules: [
       {
+        test: /\.html$/,
+        loader: 'vue-template-loader',
+        exclude: /index.html/,
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader',
-        options: {
-          loaders: {
-            // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-            // the "scss" and "sass" values for the lang attribute to the right configs here.
-            // other preprocessors should work out of the box, no loader config like this necessary.
-            'scss': 'vue-style-loader!css-loader!sass-loader',
-            'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',
-          }
-        }
+        exclude: /node_modules/,
       },
       {
         test: /\.tsx?$/,
@@ -32,7 +29,7 @@ module.exports = {
         options: {
           appendTsSuffixTo: [/\.vue$/],
         }
-      }
+      },
     ]
   },
   resolve: {
@@ -52,12 +49,12 @@ module.exports = {
   },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
   performance: {
     hints: false
   },
-  devtool: 'eval-source-map'
+  devtool: 'eval-source-map',
 }
 
 if (process.env.NODE_ENV === 'production') {

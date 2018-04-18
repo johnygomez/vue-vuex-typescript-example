@@ -1,0 +1,6 @@
+<select
+    class="TodoFilter"
+    v-model="currentFilter"
+  >
+  <option v-for="filter in filterTypes" v-bind:key="filter">{{ filter }}</option>
+</select>

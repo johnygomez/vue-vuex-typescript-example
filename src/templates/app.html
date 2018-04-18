@@ -1,0 +1,24 @@
+<div class="App">
+  <div>You are typing: {{ input }}</div>
+  <input
+    class="App-input"
+    autofocus
+    autocomplete="off"
+    placeholder="Enter a todo"
+    v-model="input"
+    @keydown.enter="addTodo"
+  >
+  <div class="App-box">
+    <Todo
+      v-for="(todo, index) of filteredTodos"
+      :key="index"
+      v-bind="todo"
+
+      @toggle="toggleTodo(todo)"
+      @delete="deleteTodo(todo)"
+    ></Todo>
+  </div>
+  <div class="App-box">
+    <TodoFilter></TodoFilter>
+  </div>
+</div>

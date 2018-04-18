@@ -2,7 +2,7 @@
   "name": "todo",
   "version": "0.0.1",
   "dependencies": {
-    "css-loader": "^0.28.11",
+    "stylus": "^0.54.5",
     "ts-loader": "^4.1.0",
     "tslint": "^5.7.0",
     "typescript": "^2.8.1",
@@ -10,6 +10,7 @@
     "vue-class-component": "^6.2.0",
     "vue-loader": "^14.2.2",
     "vue-property-decorator": "^6.0.0",
+    "vue-template-loader": "^0.4.1",
     "vuetype": "^0.3.2",
     "vuex": "^3.0.1",
     "vuex-class": "^0.3.0",
@@ -18,15 +19,17 @@
   "description": "Implementation of todo list using Vue, Vuex and Typescript",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
-    "watch": "webpack --watch",
-    "start": "webpack-dev-server --open",
+    "build": "stylus src/styles -o dist/styles.css && webpack",
+    "watch-vue": "webpack-dev-server --open",
+    "watch-styles": "stylus -w src/styles -o dist/styles.css",
+    "start": "npm-run-all --parallel watch-vue watch-styles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Jan Gamec",
   "license": "MIT",
   "devDependencies": {
     "launch-editor-middleware": "^2.2.1",
+    "npm-run-all": "^4.1.2",
     "webpack-cli": "^2.0.14",
     "webpack-dev-server": "^3.1.1"
   }
