@@ -18,11 +18,6 @@ module.exports = {
         exclude: /index.html/,
       },
       {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        exclude: /node_modules/,
-      },
-      {
         test: /\.tsx?$/,
         loader: 'ts-loader',
         exclude: /node_modules/,

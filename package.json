@@ -8,7 +8,6 @@
     "typescript": "^2.8.1",
     "vue": "^2.5.16",
     "vue-class-component": "^6.2.0",
-    "vue-loader": "^14.2.2",
     "vue-property-decorator": "^6.0.0",
     "vue-template-loader": "^0.4.1",
     "vuetype": "^0.3.2",
