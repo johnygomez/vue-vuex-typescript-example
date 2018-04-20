@@ -18,9 +18,9 @@
   "description": "Implementation of todo list using Vue, Vuex and Typescript",
   "main": "index.js",
   "scripts": {
-    "build": "stylus src/styles -o dist/styles.css && webpack",
+    "build": "mkdir dist && stylus src/styles -o dist/styles.css && webpack",
     "watch-vue": "webpack-dev-server --open",
-    "watch-styles": "stylus -w src/styles -o dist/styles.css",
+    "watch-styles": "mkdir dist && stylus -w src/styles -o dist/styles.css",
     "start": "npm-run-all --parallel watch-vue watch-styles",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
